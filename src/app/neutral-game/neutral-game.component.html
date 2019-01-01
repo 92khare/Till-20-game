@@ -1,0 +1,80 @@
+
+<div class="container-fluid">
+<div id="resultOverlay" class="overlay">
+ <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>-->
+  <div class="overlay-content">
+    
+    <p>{{modalMsg}}</p>
+    <br><br>
+    <p (click)="tryAgain()">{{tryAgainMsg}}</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span>-->
+<div class="container">
+<!--The Timer-->
+<div id="myTimer" class="timer" *ngIf="loaderOver">
+<p>Choose next digit in {{secondsleft}} seconds</p>
+</div>
+</div> 
+<!--Timer Closes-->
+
+  
+
+<div class="container">
+      <div class="contentBox" *ngIf="!onLoad">
+          <div class="contentHeading">
+               <p>Begin</p>
+                <p>Till20 ?</p>
+
+           </div>
+
+
+
+    <div class="contentButton">
+      
+       <button class="btn btn-success" (click)="beginGame()">Start Game</button>
+    </div>
+
+</div>
+
+<div class="contentBox" *ngIf="onLoad">
+        <div class="contentHeading2" *ngIf="!loaderOver">
+ 
+              <p>Game begins in</p>
+             <p>{{loaderNumber}}</p>
+            <p>seconds</p>   
+</div>
+
+<div class="abc" *ngIf="loaderOver">
+  <div class="systemBox">
+        My Number
+  </div>
+  <div class="systemNumber">
+  {{systemNumber}}
+ </div>
+<div class="userBox">
+    <h4>Choose your Number</h4>
+</div>
+<div class="userButtons">
+ <table class="userTable">
+
+   <td *ngFor="let x of nextNumberArray" style="width:30%;">
+      <button style="font-size:36px;" class="btn btn-success" (click)="selectNumber(x)">{{x}}</button>
+    </td>
+   
+   </table>
+</div>
+
+  
+</div>
+</div>
+</div>
+</div>
+

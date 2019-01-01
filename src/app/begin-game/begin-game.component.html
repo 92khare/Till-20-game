@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+<div id="myOverlay" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" *ngIf="sessionTrue" (click)="closeNav()">&times;</a>
+   <div class="overlay-content">
+          <p>{{modalMsg}}</p>
+   </div>
+ </div>
+ 
+<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; How to play</span>
+
+<div class="container">
+  
+<div class="contentBox">
+    <div class="contentHeading">
+      <p>Welcome</p>
+       <p>to</p>
+     <p>Till20</p>
+     
+    </div>
+
+    <div class="contentButton">
+      <button  (click)="nav()" class="btn btn-success">Play Game</button>
+    </div>
+</div>
+
+  
+
+</div>
+
+
+
+</div>
